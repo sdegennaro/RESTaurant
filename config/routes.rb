@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   #   resources :products
   resources :users, only: [:new, :create]
 
+  get '/users/log_in' => "users#log_in", as: :log_in
+  get '/users/profile' => "users#profile", as: :profile
+
+  post   '/sessions' => "sessions#create", as: :create_session
+  delete '/sessions' => "sessions#destroy", as: :delete_session
   # Example resource route with options:
   #   resources :products do
   #     member do
