@@ -11,5 +11,9 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
+  <%= f.radio_button :is_admin, 0%>Not Admin
+  <%= f.radio_button :is_admin, 1%>Admin
+  <!-- <%= f.radio_button :is_admin, "Admin", :checked => "1" %> -->
+
   <%= f.submit %>
 <% end %>

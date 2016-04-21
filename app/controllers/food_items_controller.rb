@@ -1,5 +1,7 @@
 class FoodItemsController < ApplicationController
 
+  before_action :authenticate!, only: [ :create, :edit, :destroy, :update]
+
   def index
     @food_items = FoodItem.all
   end

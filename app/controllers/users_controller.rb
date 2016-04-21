@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  include SessionsHelper
+  # include SessionsHelper
   before_action :authenticate!, only: [:profile]
 
   def new
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :password, :password_confirmation, :is_admin)
   end
 
 end
