@@ -3,4 +3,6 @@
 <% @food_items.each do |food| %>
   <h2><%= link_to( food.name, food_item_path(food.id) ) %></h2>
 
+  <li><%= link_to "Add Food Item", new_food_item_path %></li>
+
 <% end %>

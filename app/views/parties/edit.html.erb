@@ -6,6 +6,8 @@
 
   <%= f.label :party_size %>
   <%= f.number_field :party_size %>
+  <%= f.label :waitstaffs_id %>
+  <%= f.collection_select :waitstaffs_id, Waitstaff.all, :id, :name %>
 
   <%= f.submit %>
 <% end %>

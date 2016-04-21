@@ -4,3 +4,5 @@
 <p>Party Size: <%= @party.party_size %></p>
 <p>Customers:</p>
 <%= link_to "EDIT", edit_party_path(@party.id) %>
+
+<li><%= link_to "Add Food Order", new_food_order_path %></li>
