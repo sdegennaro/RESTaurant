@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   post   '/sessions' => "sessions#create", as: :create_session
   delete '/sessions' => "sessions#destroy", as: :delete_session
+
+  resources :food_items
+  resources :parties
   # Example resource route with options:
   #   resources :products do
   #     member do

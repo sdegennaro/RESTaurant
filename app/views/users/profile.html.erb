@@ -1,0 +1,7 @@
+<h1>Welcome Back <%= @user.username %></h1>
+
+<li><%= link_to "View Tables", parties_path %></li>
+<li><%= link_to "Add Food Item", new_food_item_path %></li>
+
+
+<%= button_to "Log Out", delete_session_path, method: :delete %>
