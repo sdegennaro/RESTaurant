@@ -5,6 +5,5 @@
 <% @customers.each do |customer| %>
   <h2><%= link_to( customer.table_number, customer_path(customer.id) ) %></h2>
 
-  <p>Party Size: <%= customer.party_size%></p>
 
 <% end %>
