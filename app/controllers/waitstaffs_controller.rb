@@ -18,7 +18,7 @@ class WaitstaffsController < ApplicationController
 
   def show
     @waitstaff = Waitstaff.find params[:id]
-    @parties =Party.where(waitstaffs_id: params[:id])
+    @customers =Customer.where(waitstaffs_id: params[:id])
   end
 
   def update

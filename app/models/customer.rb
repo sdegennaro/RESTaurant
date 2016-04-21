@@ -1,6 +1,5 @@
-class Party < ActiveRecord::Base
+class Customer < ActiveRecord::Base
   belongs_to :waitstaff
-  has_many :customers
 
   #  attr_reader :party_size, :table_number
   def makeCustomers(size)

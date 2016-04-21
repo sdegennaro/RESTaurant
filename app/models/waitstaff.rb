@@ -1,3 +1,3 @@
 class Waitstaff < ActiveRecord::Base
-  has_many :parties 
+  has_many :customers
 end

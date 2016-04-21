@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   delete '/sessions' => "sessions#destroy", as: :delete_session
 
   resources :food_items
-  resources :parties
+  resources :customers
   resources :waitstaffs
   resources :food_orders
   # Example resource route with options:

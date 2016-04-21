@@ -1,6 +1,6 @@
 <h1>EDIT TABLE</h1>
 
-<%= form_for @party do |f| %>
+<%= form_for @customer do |f| %>
   <%= f.label :table_number %>
   <%= f.number_field :table_number %>
 
@@ -12,4 +12,4 @@
   <%= f.submit %>
 <% end %>
 
-<%= link_to "DELETE", party_path(@party), method: :delete %>
+<%= link_to "DELETE", customer_path(@customer), method: :delete %>
