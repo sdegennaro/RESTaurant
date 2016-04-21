@@ -1,6 +1,6 @@
 <h1>Menu</h1>
 
 <% @food_items.each do |food| %>
-  <h2><%= link_to( food_item.name, food_item_path(food_item.id) ) %></h2>
+  <h2><%= link_to( food.name, food_item_path(food.id) ) %></h2>
 
 <% end %>

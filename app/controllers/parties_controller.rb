@@ -31,6 +31,10 @@ class PartiesController < ApplicationController
     redirect_to party_path
   end
 
+  def make_customers
+    Party.makeCustomers Party.party_size
+  end
+
   private
 
   def party_params

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :food_items
   resources :parties
+  resources :waitstaffs 
   # Example resource route with options:
   #   resources :products do
   #     member do
