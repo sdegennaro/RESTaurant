@@ -6,9 +6,11 @@
   <%= f.collection_select :food_item_id, FoodItem.all, :id, :name %>
   <%= f.label :table_id %>
 
-  <%= f.collection_select :table_id, Table.all, :id, :table_number, value: params[table: :id] %>
+  <%= f.collection_select :table_id, Table.all, :id, :table_number, {:prompt => "#{Table.find(params[:table_id]).table_number}"} %>
 
 
   <%= f.submit %>
+
+  <p> <%=Table.find(params[:table_id]).table_number %></p>
 
 <% end %>

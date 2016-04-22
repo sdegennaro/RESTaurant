@@ -3,7 +3,7 @@ class FoodOrdersController < ApplicationController
 
   def new
      @food_order = FoodOrder.new
-     @table = Table.find params[:id]
+     @tables = Table.all
   end
 
 def create
@@ -37,6 +37,6 @@ end
 private
 
 def order_params
-  params.require(:food_order).permit(:seat_number, :food_item_id)
+  params.require(:food_order).permit(:seat_number, :food_item_id, :table_id)
 end
 end
