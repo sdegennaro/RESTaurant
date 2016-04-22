@@ -2,8 +2,19 @@
 
 <%= link_to "Add a new customer", new_customer_path %>
 
-<% @customers.each do |customer| %>
-  <h2><%= link_to( customer.table_number, customer_path(customer.id) ) %></h2>
+<% @tables.each do |table| %>
+  <h2>Table <%= table%></h2>
+  <% table_customers = @customers.where(table_number: table)%>
+  <% table_customers.each do |customer| %>
+    <h4><%= link_to("Seat #{customer.seat_number}", customer_path(customer.id))%></h4>
+  <% end %>
+  <h4><%= link_to "View Orders", "" %></h4>
+
+  <h4><%= link_to "View Bill", "" %></h4>
+
+  <h4><%= link_to "Close Out", "" %></h4>
+
+
 
 <!--  loop through table numbers, make those the headers, show the customers under each table as editable fields-->
 <% end %>

@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   def index
     @customers = Customer.all
+    @tables = Customer.uniq.pluck(:table_number)
   end
 
   def create
