@@ -3,27 +3,17 @@
 <%= link_to "Add a new table", new_table_path %>
 
 <% @tables.each do |table| %>
-  <% if table.to_display == 1%>
 
-    <h2>Table <%= table.table_number%></h2>
+  <h2>Table <%= table.table_number%> - <%= table.waitstaff.name %></h2>
 
-    <h4><%= link_to "View Orders", "" %></h4>
+  <h4><%= link_to "View Orders", "" %></h4>
 
-    <h4><%= link_to "View Bill", "" %></h4>
+  <h4><%= link_to "View Bill", "" %></h4>
 
-    <h4><%= link_to "Close Out", "" %></h4>
-    <%= form_for table do |f| %>
-      <!-- <%= f.check_box :to_display, {}, 1, 0 %> -->
+  <h4><%= link_to "Close Out", table_path(table), method: :delete %></h4>
 
-      <%= f.number_field :to_display %>
-
-      <%=f.submit "Close Out"%>
-
-
-    <% end %>
-  <% end %>
+<% end %>
 
 
 
 <!--  loop through table numbers, make those the headers, show the customers under each table as editable fields-->
-<% end %>
