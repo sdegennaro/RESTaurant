@@ -12,7 +12,15 @@
     <h4><%= link_to "View Bill", "" %></h4>
 
     <h4><%= link_to "Close Out", "" %></h4>
+    <%= form_for table do |f| %>
+      <!-- <%= f.check_box :to_display, {}, 1, 0 %> -->
 
+      <%= f.number_field :to_display %>
+
+      <%=f.submit "Close Out"%>
+
+
+    <% end %>
   <% end %>
 
 
