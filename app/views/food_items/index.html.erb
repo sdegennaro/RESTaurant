@@ -3,7 +3,14 @@
 <% @food_items.each do |food| %>
   <h2><%= link_to( food.name, food_item_path(food.id) ) %></h2>
 
+  <%if @user && @user.is_admin == 1%>
+
+  <h4><%= link_to "Delete", food_item_path(food), method: :delete %></h4>
+
+  <% end %>
 
 <% end %>
 
+<%if @user && @user.is_admin == 1%>
 <li><%= link_to "Add Food Item", new_food_item_path %></li>
+<% end %>

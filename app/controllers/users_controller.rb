@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # include SessionsHelper
-  before_action :authenticate!, only: [:profile]
+  before_action :authenticate_home!, only: [:profile]
 
   def new
     @user = User.new

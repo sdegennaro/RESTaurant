@@ -4,11 +4,13 @@ class FoodItemsController < ApplicationController
 
   def index
     @food_items = FoodItem.all
+    @user = current_user
+
   end
 
   def create
     newFood = FoodItem.create food_params
-    redirect_to food_item_path newFood.id
+    redirect_to food_items_path 
   end
 
   def new
@@ -31,7 +33,7 @@ class FoodItemsController < ApplicationController
 
   def destroy
     FoodItem.destroy params[:id]
-    redirect_to food_item_path
+    redirect_to food_items_path
   end
 
   private
