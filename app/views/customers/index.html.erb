@@ -5,5 +5,5 @@
 <% @customers.each do |customer| %>
   <h2><%= link_to( customer.table_number, customer_path(customer.id) ) %></h2>
 
-
+<!--  loop through table numbers, make those the headers, show the customers under each table as editable fields-->
 <% end %>

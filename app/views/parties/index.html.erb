@@ -1,0 +1,11 @@
+<h1>Here's all the parties</h1>
+
+<%= link_to "Add a new party", new_party_path %>
+
+<% @parties.each do |party| %>
+  <h2><%= link_to( party.table_number, party_path(party.id) ) %></h2>
+
+  <p>Party Size: <%= party.party_size%></p>
+
+
+<% end %>
