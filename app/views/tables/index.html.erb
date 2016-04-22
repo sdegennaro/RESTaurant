@@ -1,13 +1,10 @@
 <h1>Here's all the parties</h1>
 
-<%= link_to "Add a new customer", new_customer_path %>
+<%= link_to "Add a new table", new_table_path %>
 
 <% @tables.each do |table| %>
-  <h2>Table <%= table%></h2>
-  <% table_customers = @customers.where(table_number: table)%>
-  <% table_customers.each do |customer| %>
-    <h4><%= link_to("Seat #{customer.seat_number}", customer_path(customer.id))%></h4>
-  <% end %>
+  <h2>Table <%= table.table_number%></h2>
+  
   <h4><%= link_to "View Orders", "" %></h4>
 
   <h4><%= link_to "View Bill", "" %></h4>

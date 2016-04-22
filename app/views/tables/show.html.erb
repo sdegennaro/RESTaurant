@@ -1,0 +1,6 @@
+<h1><%= link_to( @table.table_number, table_path(@table.id) ) %></h1>
+
+<p>Table Number: <%= @table.table_number%></p>
+
+<li><%= link_to "Add Food Order", new_food_order_path %></li>
+<%= link_to "Close Out", table_path(@table), method: :delete %>
