@@ -3,13 +3,19 @@
 <%= link_to "Add a new table", new_table_path %>
 
 <% @tables.each do |table| %>
-  <h2>Table <%= table.table_number%></h2>
-  
-  <h4><%= link_to "View Orders", "" %></h4>
+  <% if table.to_display == 1%>
 
-  <h4><%= link_to "View Bill", "" %></h4>
+    <h2>Table <%= table.table_number%></h2>
 
-  <h4><%= link_to "Close Out", "" %></h4>
+    <h4><%= link_to "View Orders", "" %></h4>
+
+    <h4><%= link_to "View Bill", "" %></h4>
+
+    <h4><%= link_to "Close Out", "" %></h4>
+    <%= link_to "Close Out", table_path(table.id), method: :close_out %>
+    <%= link_to "Take a nap", {:controller => "tables", :action => "close_oout", :id => table.id} %>
+
+  <% end %>
 
 
 
