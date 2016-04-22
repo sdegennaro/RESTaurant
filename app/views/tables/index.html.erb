@@ -5,9 +5,12 @@
 <% @tables.each do |table| %>
 
   <h2>Table <%= table.table_number%> - <%= table.waitstaff.name %></h2>
+  <!--  TO DO -->
+  <h4><%= link_to "Add Order", new_food_order_path %></h4>
 
+  <!--  TO DO -->
   <h4><%= link_to "View Orders", "" %></h4>
-
+  <!--  TO DO -->
   <h4><%= link_to "View Bill", "" %></h4>
 
   <h4><%= link_to "Close Out", table_path(table), method: :delete %></h4>

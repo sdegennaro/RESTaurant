@@ -1,7 +1,7 @@
 <%= form_for @food_order do |f| %>
 
-  <%= f.label :food_items_id %>
-  <%= f.collection_select :food_items_id, FoodItem.all, :id, :name %>
+  <%= f.label :food_item_id %>
+  <%= f.collection_select :food_item_id, FoodItem.all, :id, :name %>
 
   <%= f.submit %>
 

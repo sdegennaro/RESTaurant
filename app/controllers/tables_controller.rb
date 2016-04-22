@@ -27,7 +27,7 @@ class TablesController < ApplicationController
     redirect_to table_path table.id
   end
 
-  
+
 
   def destroy
     Table.destroy params[:id]
@@ -39,6 +39,6 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:table_number, :waitstaffs_id, :is_paid, :to_display)
+    params.require(:table).permit(:table_number, :waitstaff_id, :is_paid, :to_display)
   end
 end
