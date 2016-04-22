@@ -12,8 +12,6 @@
     <h4><%= link_to "View Bill", "" %></h4>
 
     <h4><%= link_to "Close Out", "" %></h4>
-    <%= link_to "Close Out", table_path(table.id), method: :close_out %>
-    <%= link_to "Take a nap", {:controller => "tables", :action => "close_oout", :id => table.id} %>
 
   <% end %>
 

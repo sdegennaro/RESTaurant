@@ -25,8 +25,7 @@ Rails.application.routes.draw do
   resources :tables
   resources :waitstaffs
   resources :food_orders
-  post '/tables/:id/' => "tables#close_out", as: :close_out
-  post '/tables/:id/'=> "tables#close_oout", as: :close_oout
+  
   # Example resource route with options:
   #   resources :products do
   #     member do

@@ -5,8 +5,6 @@ class Table < ActiveRecord::Base
   validates :table_number, uniqueness: true
 
   #  attr_reader :party_size, :table_number
-  def close
-    to_display = 0
-  end
+  
 
 end

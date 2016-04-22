@@ -27,15 +27,7 @@ class TablesController < ApplicationController
     redirect_to table_path table.id
   end
 
-  def close_out
-    Table.close params[:id]
-    redirect_to tables_path
-  end
-
-  def close_oout
-    t = Table.find(params[:id])
-    t.update_attribute(:to_display, 0)
-  end
+  
 
   def destroy
     Table.destroy params[:id]
