@@ -1,11 +1,13 @@
 class WaitstaffsController < ApplicationController
+  before_action :authenticate!
+
   def index
     @waitstaffs = Waitstaff.all
   end
 
   def create
     newStaff = Waitstaff.create staff_params
-    redirect_to waitstaff_path newStaff.id
+    redirect_to waitstaff_path
   end
 
   def new
@@ -18,7 +20,7 @@ class WaitstaffsController < ApplicationController
 
   def show
     @waitstaff = Waitstaff.find params[:id]
-    @tables =Table.where(waitstaffs_id: params[:id])
+    @tables =Table.where(waitstaff_id: params[:id])
   end
 
   def update
@@ -29,7 +31,7 @@ class WaitstaffsController < ApplicationController
 
   def destroy
     Waitstaff.destroy params[:id]
-    redirect_to waitstaff_path
+    redirect_to waitstaffs_path
   end
 
   private

@@ -1,8 +1,12 @@
 <%= form_for @food_order do |f| %>
 
   <%= f.label :food_item_id %>
+
+  <%= f.label :food_item_id %>
   <%= f.collection_select :food_item_id, FoodItem.all, :id, :name %>
 
   <%= f.submit %>
 
 <% end %>
+
+<%= params(table)%>

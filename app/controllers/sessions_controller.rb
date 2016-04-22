@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
     # destroy a session
     def destroy
       session[:user_id] = nil
-      redirect_to log_in_path
+      redirect_to root_path
     end
 end

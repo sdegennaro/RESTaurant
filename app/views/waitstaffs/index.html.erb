@@ -3,8 +3,17 @@
 <%= link_to "Add a new staff member", new_waitstaff_path %>
 
 <% @waitstaffs.each do |staff| %>
-  <h2><%= link_to( staff.name, waitstaff_path(staff.id) ) %></h2>
+  <h2><%= staff.name %></h2>
+  <%if staff.tables.length > 0%>
+    <h4>Serving:</h4>
+    <ul>
+      <%staff.tables.each do |t|%>
+        <li>Table <%= t.table_number %></li>
+      <% end %>
+    </ul>
 
-  <p>Name: <%= staff.name%></p>
+  <%else%>
+    <h4><%= link_to "Delete", waitstaff_path(staff), method: :delete %></h4>
+  <% end %>
 
 <% end %>

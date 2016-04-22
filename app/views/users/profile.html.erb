@@ -1,8 +1,12 @@
 <h1>Welcome Back <%= @user.username %></h1>
 
 <li><%= link_to "View Tables", tables_path %></li>
-<li><%= link_to "View Staff", waitstaffs_path %></li>
 <li><%= link_to "View Menu", food_items_path %></li>
+
+<% if @user.is_admin == 1%>
+  <li><%= link_to "View Staff", waitstaffs_path %></li>
+
+<% end %>
 
 
 

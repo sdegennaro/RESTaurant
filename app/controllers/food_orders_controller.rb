@@ -1,4 +1,6 @@
 class FoodOrdersController < ApplicationController
+  before_action :authenticate!
+
   def new
      @food_order = FoodOrder.new
   end

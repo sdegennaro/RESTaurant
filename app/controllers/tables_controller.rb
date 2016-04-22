@@ -1,4 +1,6 @@
 class TablesController < ApplicationController
+  before_action :authenticate!
+
   def index
     @tables = Table.all
     # @othertables = Table.uniq.pluck(:table_number)
