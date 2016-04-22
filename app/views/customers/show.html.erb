@@ -5,3 +5,4 @@
 <%= link_to "EDIT", edit_customer_path(@customer.id) %>
 
 <li><%= link_to "Add Food Order", new_food_order_path %></li>
+<%= link_to "Close Out", customer_path(@customer), method: :delete %>

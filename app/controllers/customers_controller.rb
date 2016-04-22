@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
 
   def create
     newCustomer = Customer.create customer_params
-    redirect_to customer_path newCustomer.id
+    redirect_to customers_path
   end
 
   def new
@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
 
   def destroy
     Customer.destroy params[:id]
-    redirect_to customer_path
+    redirect_to customers_path
   end
 
   def make_customers
@@ -38,6 +38,6 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require(:customer).permit(:table_number, :party_size)
+    params.require(:customer).permit(:table_number, :waitstaffs_id, :seat_number)
   end
 end
