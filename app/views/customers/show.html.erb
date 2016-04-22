@@ -1,7 +1,6 @@
 <h1><%= link_to( @customer.table_number, customer_path(@customer.id) ) %></h1>
 
 <p>Table Number: <%= @customer.table_number%></p>
-<p>Party Size: <%= @customer.party_size %></p>
 <p>Customers:</p>
 <%= link_to "EDIT", edit_customer_path(@customer.id) %>
 

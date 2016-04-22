@@ -38,3 +38,4 @@ User will be able to see food order by customer or by party.
 User will be able to pull receipt by party or customer.
 
 user come to homepage, is given option to log in. upon log in, user can see parties(tables), view menu (food items), add party(table), add order
+user can see all parties still in the restaurant and whether they've paid or not. once the party has left, the user can remove them from the display. 
