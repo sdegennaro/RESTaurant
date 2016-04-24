@@ -1,11 +1,13 @@
 <h1>Table <%= @table.table_number%></h1>
-<h4>Orders:</h4>
 <% @food_orders.each do |o|%>
+<div class="row">
+<div class="col-xs-5">
 <p><%= o.food_item.name %></p>
+</div>
+<div class="col-xs-5">
+  <p><%= o.seat_number %></p>
+</div>
+</div>
 <% end %>
 
-
-<li><%= link_to "Add Food Order", new_table_food_order_path(params[:id]) %></li>
-<%= link_to "View Receipt", receipt_path %>
-
-<%= link_to "Close Out", table_path(@table), method: :delete %>
+<h6><div class="col-xs-12"><%= link_to "Add Order", new_table_food_order_path(params[:id]) %> | <%= link_to "Receipt", receipt_path %> | <%= link_to "Close Out", table_path(@table), method: :delete %></div></h6>

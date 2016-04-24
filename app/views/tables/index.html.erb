@@ -1,12 +1,13 @@
-<h1>Here's all the parties</h1>
-
+<h2>Current Customers</h2>
+<div>
 <%= link_to "Add a new table", new_table_path %>
-
+</div>
 <% @tables.each do |table| %>
-  <div class= "col-sm-4">
-  <h2>Table <%= table.table_number%> - <%= table.waitstaff.name %></h2>
+  <div class= "col-sm-3 ">
+  <h4>Table <%= table.table_number%></h4>
+  <p>Server - <%= table.waitstaff.name %></p>
 
-  <h4><%= link_to "Add Order", new_table_food_order_path(table) %> | <%= link_to "View Orders", table_path(table) %> | <%= link_to "View Bill", receipt_path(table) %> | <%= link_to "Close Out", table_path(table), method: :delete %></h4>
+  <h6><div class="col-xs-12"><%= link_to "Add Order", new_table_food_order_path(table) %> | <%= link_to "View Orders", table_path(table) %> | <%= link_to "Receipt", receipt_path(table) %> | <%= link_to "Close Out", table_path(table), method: :delete %></div></h6>
 </div>
 <% end %>
 

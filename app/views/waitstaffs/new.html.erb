@@ -1,8 +1,8 @@
-<h1>NEW Staff</h1>
+<h1>Staff</h1>
 
 <%= form_for @waitstaff do |f| %>
-  <%= f.label :name %>
+  <%= f.label :name, value: "Employee Name" %>
   <%= f.text_field :name, value: @user.username %>
 
-  <%= f.submit, value: "Start Shift"%>
+  <%= f.submit "Start Shift"%>
 <% end %>

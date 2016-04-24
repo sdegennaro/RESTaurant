@@ -24,10 +24,11 @@ Rails.application.routes.draw do
   resources :food_items
   resources :tables do
     resources :food_orders
+
   end
 
   get '/tables/:id/receipt/' => "tables#receipt", as: :receipt
-
+  delete '/tables/:table_id/food_orders/' => "food_orders#destroy"
 
   resources :waitstaffs
 

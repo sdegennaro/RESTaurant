@@ -1,0 +1,51 @@
+<h1>Table <%= @table.table_number%></h1>
+<h4>Orders:</h4>
+<%total = 0%>
+<% @food_orders.each do |o|%>
+<div class="row">
+  <div class="col-xs-6">
+<p><%= o.food_item.name %></p>
+</div>
+<div class="col-xs-6">
+
+<p><%= number_to_currency(o.food_item.price) %></p>
+</div>
+</div>
+<% total = total + o.food_item.price %>
+<% end %>
+<div class="col-xs-6">
+</div>
+  <div class="col-xs-6">
+
+<h4>Total <%=number_to_currency(total)%></h4>
+</div>
+<%tip25 = total * 0.25%>
+<%tip20 = total * 0.2%>
+<%tip15 = total * 0.15%>
+<div class="row">
+  <div class="col-xs-3">
+  </div>
+<div class="col-xs-6">
+
+<h4 class="tip">15% Tip is <%=number_to_currency(tip25)%></h4>
+</div>
+</div>
+<div class="row">
+  <div class="col-xs-3">
+  </div>
+<div class="col-xs-6">
+
+<h4 class="tip">20% Tip is <%=number_to_currency(tip20)%></h4>
+</div>
+</div>
+<div class="row">
+  <div class="col-xs-3">
+  </div>
+<div class="col-xs-6">
+
+<h4 class="tip">25% Tip is <%=number_to_currency(tip15)%></h4>
+</div>
+</div>
+
+
+<h4><%= link_to "Close Out", table_path(@table), method: :delete %></h4>

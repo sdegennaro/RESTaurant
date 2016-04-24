@@ -1,3 +1,9 @@
+<header>
+  <ul>
+    <li><%= link_to "Home", profile_path%></li>
+    <li><%= link_to "Menu", food_items_path %></li>
+  </ul>
+</header>
 <h1>Log In Here</h1>
 
 <%= form_tag '/sessions', method: :post do %>
