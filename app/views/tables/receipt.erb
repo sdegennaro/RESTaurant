@@ -1,1 +1,18 @@
-<h1> ooook </h1>
+<h1>Table <%= @table.table_number%></h1>
+<h4>Orders:</h4>
+<%total = 0%>
+<% @food_orders.each do |o|%>
+<p><%= o.food_item.name %></p>
+<p><%= number_to_currency(o.food_item.price) %></p>
+<% total = total + o.food_item.price %>
+<% end %>
+<h4>Total <%=number_to_currency(total)%></h4>
+<%tip25 = total * 0.25%>
+<%tip20 = total * 0.2%>
+<%tip15 = total * 0.15%>
+
+<h4>Tip <%=number_to_currency(tip25)%></h4>
+<h4>Tip <%=number_to_currency(tip20)%></h4>
+<h4>Tip <%=number_to_currency(tip15)%></h4>
+
+<h4><%= link_to "Close Out", table_path(@table), method: :delete %></h4>
