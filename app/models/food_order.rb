@@ -1,4 +1,4 @@
 class FoodOrder < ActiveRecord::Base
-  has_many :food_items
+  belongs_to :food_item
   belongs_to :table
 end

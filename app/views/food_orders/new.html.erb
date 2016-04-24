@@ -11,3 +11,9 @@
 
 
 <% end %>
+
+<% @food_orders.each do |order|%>
+
+  <h2><%= order.food_item.name %> </h2>
+  <h2><%=order.seat_number %></h2>
+<% end %>

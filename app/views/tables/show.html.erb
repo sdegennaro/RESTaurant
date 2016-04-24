@@ -1,8 +1,7 @@
 <h1>Table <%= @table.table_number%></h1>
 <h4>Orders:</h4>
-<p><%= @food_orders %></p>
 <% @food_orders.each do |o|%>
-<p><%= o.name %></p>
+<p><%= o.food_item.name %></p>
 <% end %>
 
 
