@@ -6,4 +6,6 @@
 
 
 <li><%= link_to "Add Food Order", new_table_food_order_path(params[:id]) %></li>
+<%= link_to "View Receipt", receipt_path %>
+
 <%= link_to "Close Out", table_path(@table), method: :delete %>

@@ -24,6 +24,11 @@ class TablesController < ApplicationController
     @food_orders = FoodOrder.where(table_id: params[:id])
   end
 
+  def receipt 
+    @table = Table.find params[:id]
+    @food_orders = FoodOrder.where(table_id: params[:id])
+  end
+
   def update
     table = Table.find params[:id]
     table.update table_params

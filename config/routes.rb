@@ -26,8 +26,11 @@ Rails.application.routes.draw do
     resources :food_orders
   end
 
+  get '/tables/:id/receipt/' => "tables#receipt", as: :receipt
+
+
   resources :waitstaffs
-  
+
   # Example resource route with options:
   #   resources :products do
   #     member do
