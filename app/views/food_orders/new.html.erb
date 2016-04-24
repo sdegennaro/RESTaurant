@@ -1,14 +1,12 @@
+<h2> Table <%=Table.find(params[:table_id]).table_number%></h2>
 <%= form_for [:table, @food_order] do |f| %>
 
-  <%= f.label :food_item_id %>
 
   <%= f.label :food_item_id %>
   <%= f.collection_select :food_item_id, FoodItem.all, :id, :name %>
-  <%= f.label :table_id %>
-
-  <%= f.collection_select :table_id, Table.all, :id, :table_number, {:prompt => "#{Table.find(params[:table_id]).table_number}"} %>
-
-
+  <%= f.label :seat_number %>
+  <%= f.number_field :seat_number%>
+  <%= f.hidden_field :table_id, value: params[:table_id]%>
   <%= f.submit %>
 
 

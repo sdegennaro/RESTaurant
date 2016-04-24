@@ -12,11 +12,12 @@ class FoodOrdersController < ApplicationController
 
 def create
   newOrder = FoodOrder.create order_params
-  redirect_to table_food_orders_path 
+  redirect_to new_table_food_order_path
 end
 
 def new
   @food_order = FoodOrder.new
+  @food_orders = FoodOrder.where(table_id: params[:table_id])
 end
 
 def edit
