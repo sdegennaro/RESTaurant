@@ -21,6 +21,7 @@ class TablesController < ApplicationController
 
   def show
     @table = Table.find params[:id]
+    @food_orders = FoodOrder.where(table_id: params[:id])
   end
 
   def update

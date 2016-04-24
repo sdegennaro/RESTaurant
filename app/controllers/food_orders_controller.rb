@@ -1,6 +1,10 @@
 class FoodOrdersController < ApplicationController
   before_action :authenticate!
 
+  def index
+    @tables = Table.all
+  end
+
   def new
      @food_order = FoodOrder.new
      @tables = Table.all
@@ -8,7 +12,7 @@ class FoodOrdersController < ApplicationController
 
 def create
   newOrder = FoodOrder.create order_params
-  redirect_to table_food_orders_path newOrder.id
+  redirect_to table_food_orders_path 
 end
 
 def new
