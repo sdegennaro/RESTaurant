@@ -12,6 +12,8 @@ class WaitstaffsController < ApplicationController
 
   def new
     @waitstaff = Waitstaff.new
+    @user = current_user
+
   end
 
   def edit

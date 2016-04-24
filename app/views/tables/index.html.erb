@@ -3,18 +3,11 @@
 <%= link_to "Add a new table", new_table_path %>
 
 <% @tables.each do |table| %>
-
+  <div class= "col-sm-4">
   <h2>Table <%= table.table_number%> - <%= table.waitstaff.name %></h2>
-  <!--  TO DO -->
-  <h4><%= link_to "Add Order", new_table_food_order_path(table) %></h4>
 
-  <!--  TO DO -->
-  <h4><%= link_to "View Orders", table_path(table) %></h4>
-  <!--  TO DO -->
-  <h4><%= link_to "View Bill", receipt_path(table) %></h4>
-
-  <h4><%= link_to "Close Out", table_path(table), method: :delete %></h4>
-
+  <h4><%= link_to "Add Order", new_table_food_order_path(table) %> | <%= link_to "View Orders", table_path(table) %> | <%= link_to "View Bill", receipt_path(table) %> | <%= link_to "Close Out", table_path(table), method: :delete %></h4>
+</div>
 <% end %>
 
 

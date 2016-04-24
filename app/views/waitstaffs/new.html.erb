@@ -2,7 +2,7 @@
 
 <%= form_for @waitstaff do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, value: @user.username %>
 
-  <%= f.submit %>
+  <%= f.submit, value: "Start Shift"%>
 <% end %>
