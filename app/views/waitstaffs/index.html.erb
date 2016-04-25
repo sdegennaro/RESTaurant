@@ -7,7 +7,7 @@
 </header>
 <h1>Staff List</h1>
 
-<div class="shift-button"><%= button_to "Start a New Shift", new_waitstaff_path %></div>
+<div class="shift-button"><%= link_to "Start a New Shift", new_waitstaff_path %></div>
   <% @waitstaffs.each do |staff| %>
   <div class="col-sm-3 has-border">
     <h4><%= staff.name %></h4>
