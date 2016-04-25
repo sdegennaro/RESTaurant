@@ -1,19 +1,25 @@
+<header>
+  <ul>
+    <li><%= link_to "Home", profile_path%></li>
+    <li><%= link_to "Log Out", delete_session_path, method: :delete %></li>
+
+  </ul>
+</header>
 <h1>Staff List</h1>
 
-<%= link_to "Start Shift", new_waitstaff_path %>
-
-<% @waitstaffs.each do |staff| %>
-  <h2><%= staff.name %></h2>
-  <%if staff.tables.length > 0%>
-    <h4>Serving:</h4>
-    <ul>
-      <%staff.tables.each do |t|%>
-        <li>Table <%= t.table_number %></li>
-      <% end %>
-    </ul>
-
-  <%else%>
-    <h4><%= link_to "End Shift", waitstaff_path(staff), method: :delete %></h4>
+<div class="shift-button"><%= button_to "Start a New Shift", new_waitstaff_path %></div>
+  <% @waitstaffs.each do |staff| %>
+  <div class="col-sm-3 has-border">
+    <h4><%= staff.name %></h4>
+    <%if staff.tables.length > 0%>
+      <p>Serving:</p>
+        <ul>
+          <%staff.tables.each do |t|%>
+          <li>Table <%= t.table_number %></li>
+          <% end %>
+        </ul>
+    <%else%>
+      <%= button_to "End Shift", waitstaff_path(staff), method: :delete %>
+    <% end %>
+  </div>
   <% end %>
-
-<% end %>

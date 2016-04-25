@@ -1,9 +1,16 @@
+<header>
+  <ul>
+    <li><%= link_to "Home", profile_path%></li>
+    <li><%= link_to "Log Out", delete_session_path, method: :delete %></li>
+
+  </ul>
+</header>
 <h2>Current Customers</h2>
 <div>
 <%= link_to "Add a new table", new_table_path %>
 </div>
 <% @tables.each do |table| %>
-  <div class= "col-sm-3 ">
+  <div class= "col-sm-3">
   <h4>Table <%= table.table_number%></h4>
   <p>Server - <%= table.waitstaff.name %></p>
 

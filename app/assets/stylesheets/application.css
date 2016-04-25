@@ -23,6 +23,12 @@ header li a:hover {
     background-color: #111;
 }
 
+.has-border{
+}
+
+.shift-button{
+  margin: 1em;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
