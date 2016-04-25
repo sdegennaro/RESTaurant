@@ -5,16 +5,13 @@ class FoodItemsController < ApplicationController
   def index
     @food_items = FoodItem.all
     @user = current_user
-
   end
-
-  def create
-    newFood = FoodItem.create food_params
-    redirect_to food_items_path 
-  end
-
   def new
     @food_item = FoodItem.new
+  end
+  def create
+    newFood = FoodItem.create food_params
+    redirect_to food_items_path
   end
 
   def edit

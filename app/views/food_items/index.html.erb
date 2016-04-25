@@ -5,7 +5,7 @@
 </header>
 <h1>Menu</h1>
 <%if @user && @user.is_admin == 1%>
-<%= button_to "Add Food Item", new_food_item_path %>
+<%= link_to "Add Food Item", new_food_item_path %>
 <% end %>
 <div class="menu-container">
 <% @food_items.each do |food| %>
