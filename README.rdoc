@@ -1,8 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 Things you may want to cover:
 
 * Ruby version
@@ -23,19 +20,15 @@ Things you may want to cover:
 
 * ...
 
+This CRUD application allows for management of staff, menu items, orders, and tables.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The application requires authorization of a username and password to access most features.
+Users can create new accounts and log in. Users with admin status can see active tables, menu items, and staff on duty.
+Users without admin status cannot see the staff pages.
 
-waitstaff manage orders
-employee should be able to select party of customers
-see parties
 
-User will be able to view parties and see which customers are part of the party.
-User will be able to select parties by waitstaff.
-User will be able to see food items present in a food order.
-User will be able to see food order by customer or by party.
-User will be able to pull receipt by party or customer.
-
-user come to homepage, is given option to log in. upon log in, user can see parties(tables), view menu (food items), add party(table), add order
-user can see all parties still in the restaurant and whether they've paid or not. once the party has left, the user can remove them from the display. 
+Users will be able to view parties, which server's table it is, add an order, view orders, view receipt, and close out the table.
+Users will be able to select menu item and seat number when adding an order to the table.
+All users will be able to see menu with price. Users with admin status can add and delete items from the menu.
+Admins will be able to see all staff on duty and which tables are being served.
+Admins can add new staff, and for staff not currently serving a table, remove them.
