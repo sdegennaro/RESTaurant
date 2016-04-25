@@ -8,7 +8,7 @@ class TablesController < ApplicationController
 
   def create
     newTable = Table.create table_params
-    redirect_to tables_path
+    redirect_to "#{table_path(newTable)}/food_orders/new"
   end
 
   def new
@@ -24,7 +24,7 @@ class TablesController < ApplicationController
     @food_orders = FoodOrder.where(table_id: params[:id])
   end
 
-  def receipt 
+  def receipt
     @table = Table.find params[:id]
     @food_orders = FoodOrder.where(table_id: params[:id])
   end

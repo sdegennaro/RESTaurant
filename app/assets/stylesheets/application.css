@@ -25,10 +25,22 @@ header li a:hover {
 
 .has-border{
 }
-
+.food-row{
+  border: 1px solid black;
+  line-height: 50px;
+  vertical-align: middle;
+}
+.menu-container{
+  padding: 10px 20px;
+}
 .shift-button{
   margin: 1em;
 }
+
+.tip{
+  font-style: italic;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

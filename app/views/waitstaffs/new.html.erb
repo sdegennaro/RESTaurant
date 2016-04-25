@@ -8,11 +8,9 @@
 <h1>Staff</h1>
 
 <%= form_for @waitstaff do |f| %>
-<div class="col-sm-4">
 
   <%= f.label :name, value: "Employee Name" %>
   <%= f.text_field :name, value: @user.username %>
 
   <%= f.submit "Start Shift"%>
-</div>
 <% end %>

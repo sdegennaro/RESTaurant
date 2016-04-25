@@ -4,14 +4,17 @@
   </ul>
 </header>
 <h1>Menu</h1>
-
+<%if @user && @user.is_admin == 1%>
+<%= button_to "Add Food Item", new_food_item_path %>
+<% end %>
+<div class="menu-container">
 <% @food_items.each do |food| %>
-  <div class="row">
+  <div class="row food-row">
     <div class="col-xs-6">
-      <h2><%= food.name %></h2>
+      <p><%= food.name %></p>
     </div>
     <div class="col-xs-3">
-      <h2><%= number_to_currency(food.price) %></h2>
+      <p><%= number_to_currency(food.price) %></p>
     </div>
     <%if @user && @user.is_admin == 1%>
     <div class="col-xs-3">
@@ -25,7 +28,4 @@
 </div>
 
 <% end %>
-
-<%if @user && @user.is_admin == 1%>
-<li><%= link_to "Add Food Item", new_food_item_path %></li>
-<% end %>
+</div>

@@ -1,4 +1,19 @@
+<header>
+  <ul>
+    <li><%= link_to "Home", profile_path%></li>
+    <li><%= link_to "Log Out", delete_session_path, method: :delete %></li>
+
+  </ul>
+</header>
 <h1>Table <%= @table.table_number%></h1>
+<div class="row">
+<div class="col-xs-5">
+<p>Item</p>
+</div>
+<div class="col-xs-5">
+  <p>Seat Number</p>
+</div>
+</div>
 <% @food_orders.each do |o|%>
 <div class="row">
 <div class="col-xs-5">

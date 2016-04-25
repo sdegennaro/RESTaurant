@@ -1,3 +1,10 @@
+<header>
+  <ul>
+    <li><%= link_to "Home", profile_path%></li>
+    <li><%= link_to "Log Out", delete_session_path, method: :delete %></li>
+
+  </ul>
+</header>
 <h1>Table <%= @table.table_number%></h1>
 <h4>Orders:</h4>
 <%total = 0%>
@@ -27,7 +34,7 @@
   </div>
 <div class="col-xs-6">
 
-<h4 class="tip">15% Tip is <%=number_to_currency(tip25)%></h4>
+<p class="tip">15% Tip is <%=number_to_currency(tip25)%></p>
 </div>
 </div>
 <div class="row">
@@ -35,7 +42,7 @@
   </div>
 <div class="col-xs-6">
 
-<h4 class="tip">20% Tip is <%=number_to_currency(tip20)%></h4>
+<p class="tip">20% Tip is <%=number_to_currency(tip20)%></p>
 </div>
 </div>
 <div class="row">
@@ -43,7 +50,7 @@
   </div>
 <div class="col-xs-6">
 
-<h4 class="tip">25% Tip is <%=number_to_currency(tip15)%></h4>
+<p class="tip">25% Tip is <%=number_to_currency(tip15)%></p>
 </div>
 </div>
 

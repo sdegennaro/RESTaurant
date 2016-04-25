@@ -1,14 +1,9 @@
 class FoodOrdersController < ApplicationController
   before_action :authenticate!
 
-  def index
-    @tables = Table.all
-  end
 
-  def new
-     @food_order = FoodOrder.new
-     @tables = Table.all
-  end
+
+
 
 def create
   newOrder = FoodOrder.create order_params
@@ -20,13 +15,8 @@ def new
   @food_orders = FoodOrder.where(table_id: params[:table_id])
 end
 
-def edit
-  @food_order = FoodOrder.find params[:id]
-end
 
-def show
-  @food_order = FoodOrder.find params[:id]
-end
+
 
 def update
   food_order = FoodOrder.find params[:id]
